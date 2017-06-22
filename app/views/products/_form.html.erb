@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
+    <%= form.label :name, "Nombre: " %>
+    <%= form.text_field :name, id: :product_name, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :references %>
-    <%= form.text_area :references, id: :product_references %>
+    <%= form.label :references, "Referencias: " %>
+    <%= form.text_area :references, id: :product_references, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :product_price %>
+    <%= form.label :price, "Precio: " %>
+    <%= form.text_field :price, id: :product_price, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :product_quantity %>
+    <%= form.label :quantity, "Cantidad: " %>
+    <%= form.number_field :quantity, id: :product_quantity, class: "form-control" %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <br>
+  <div class="field">
+      <%= form.submit "Guardar", class: "btn btn-info" %>
   </div>
 <% end %>
