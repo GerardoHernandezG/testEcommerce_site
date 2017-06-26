@@ -2,12 +2,26 @@
 	<div class="agileits_header">
 		<div class="container">
 			<div class="w3l_offers">
-				<p>Promociones!! <a href="products.html">Compra ahora</a></p>
+				<% if user_signed_in? %>
+					<p>Conectado: <%= current_user.email %> <!-- Promociones!! <a href="products.html">Compra ahora</a>--></p>
+				<% else %>
+					<p>Promociones!! <a href="products.html">Compra ahora</a></p>
+				<% end %>			
 			</div>
 			<div class="agile-login">
 				<ul>
-					<li><a href="registered.html"> Registrarse </a></li>
-					<li><a href="login.html">Login</a></li>
+					<% if user_signed_in? %>
+		  				<li class="col-md col-xs col-sm">
+		  					<%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
+		  				</li>
+		  				<li class="col-md col-xs col-sm">
+		  			<% else %>
+		  					<%= link_to "Login", new_user_session_path %>
+		  				</li>
+		  				<li class="col-md col-xs col-sm">
+		  					<%= link_to "Registrarse", new_user_registration_path %>
+		  				</li>
+		  			<% end %>
 					<li><a href="contact.html">Ayuda</a></li>
 					
 				</ul>

@@ -1,36 +1,10 @@
-<div style="width: 80%; height: 500px; margin: 0 auto;">
-  <center><h1>Productos... Woking on it!</h1></center>
-<p id="notice"><%= notice %></p>
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>References</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div style="width: 80%; height: 100%; margin: 0 auto; padding-bottom: 20px;">
+	<center><h1>Productos</h1></center>
+	<%= link_to 'Nuevo Producto', new_product_path %>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.references %></td>
-        <td><%= product.price %></td>
-        <td><%= product.quantity %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> 
-<%= link_to 'Nuevo Producto', new_product_path %>
-<center><h1>Productos</h1></center>
-  <div class="row"> 
-    <%= render @products %>
-  </div>-->
+	  <div class="row"> 
+	    <%= render @products %>
+	  </div>
 </div>
 
 

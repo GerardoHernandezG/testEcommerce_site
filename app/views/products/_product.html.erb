@@ -1,10 +1,11 @@
 <div class="col-md-4">
 <h1><%= link_to product.name, product %></h1>
-	<div style="text-align: justify; padding-top: 0px">	 
+	<div style="text-align: justify; padding-top: 0px">
 		<div style="text-align: justify; padding-top: 0px">
-			<p>				
-				 <%= product.references %> - <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>			
-			</p>
+			<div style="height: 80%">
+				<%= product_image_preview product.image.url %>
+				<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
 		</div>
 	</div>
 </div>	

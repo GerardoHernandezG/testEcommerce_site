@@ -11,25 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" style="text-align: left">
     <%= form.label :name, "Nombre: " %>
     <%= form.text_field :name, id: :product_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field" style="text-align: left">
     <%= form.label :references, "Referencias: " %>
     <%= form.text_area :references, id: :product_references, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field" style="text-align: left">
     <%= form.label :price, "Precio: " %>
     <%= form.text_field :price, id: :product_price, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field" style="text-align: left">
     <%= form.label :quantity, "Cantidad: " %>
     <%= form.number_field :quantity, id: :product_quantity, class: "form-control" %>
   </div>
+  <div class="field" style="text-align: left">
+      Imagen: <%= form.file_field :image %>
+    </div>
   <br>
   <div class="field">
       <%= form.submit "Guardar", class: "btn btn-info" %>
