@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'paperclip'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'aws-sdk', '~> 1.36.1'
+gem 'fog' #cloud services gem
+
+gem 'figaro' #secrets admin and refresh variables, after in terminal: bundle exec figaro install
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
