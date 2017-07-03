@@ -1,0 +1,14 @@
+<div class="main_content_div">
+
+	<center><h1>Categorías</h1></center>
+
+	<h2><%= link_to 'Nueva Categoría', new_category_path %></h2>
+		<ul>
+		<% @categories.each do |category| %>				
+			<li class="admin_list"><%= link_to category.title, category %></li><%= link_to 'Editar', edit_category_path(category) %> - <%= link_to "Eliminar", category, method: :delete, data: { confirm: '¿Deseas eliminar la categoría?' } %>
+		<% end %>
+		</ul>
+	<br>
+	<h3><%= link_to 'Regresar al Panel', '/admin/settings' %></h3>
+
+</div>

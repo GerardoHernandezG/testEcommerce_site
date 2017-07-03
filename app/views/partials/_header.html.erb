@@ -3,7 +3,11 @@
 		<div class="container">
 			<div class="w3l_offers">
 				<% if user_signed_in? %>
-					<p>Conectado: <%= current_user.email %> <!-- Promociones!! <a href="products.html">Compra ahora</a>--></p>
+				  <% if current_user.permission_level == 1 %>
+					<p><strong>Conectado: </strong><%= current_user.username %> - <%= link_to "Administrar", admin_settings_path %></p>
+				  <% else %>
+				  	<p>Conectado: <%= current_user.username %></p>
+				  <% end %>
 				<% else %>
 					<p>Promociones!! <a href="products.html">Compra ahora</a></p>
 				<% end %>			

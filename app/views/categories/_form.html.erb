@@ -1,0 +1,21 @@
+<%= form_for(@category, html: {id: "category_form"}) do |form| %>
+  <% @category.errors.full_messages.each do |message| %>
+    <div class="be-red white top-space">
+      * <%= message %>
+    </div>
+  <% end %>
+  <div class="field" style="text-align: left">
+    <%= form.label :title, "Nombre: " %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="field" style="text-align: left">
+    <%= form.label :desc, "Descripción: " %>
+    <%= form.text_area :desc, class: "form-control" %>
+  </div>
+  
+  <br>
+  <div class="field">
+      <%= form.submit "Guardar", class: "btn btn-info" %>
+  </div>
+<% end %>

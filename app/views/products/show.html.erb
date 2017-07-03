@@ -26,7 +26,10 @@
 		  <%= @product.quantity %>
 		</p>
 
-		<%= link_to 'Editar', edit_product_path(@product) %> |
+		<% if user_signed_in? && current_user.permission_level == 1 %>
+			<%= link_to 'Editar', edit_product_path(@product) %> |
+		<% end %>
+		
 		<%= link_to 'Regresar', products_path %>
 	</div>
 </div>

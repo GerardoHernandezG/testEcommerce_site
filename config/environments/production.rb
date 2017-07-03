@@ -99,4 +99,6 @@ Rails.application.configure do
       password: ENV["EMAIL_PASSWORD"]
   }
 
+  config.serve_static_assets = true
+
 end

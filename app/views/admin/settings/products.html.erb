@@ -1,0 +1,20 @@
+<div class="main_content_div">
+	<center><h1>Productos</h1></center>
+
+	<% if user_signed_in? && current_user.permission_level == 1 %>
+		<%= link_to 'Nuevo Producto', new_product_path %>
+	<% end %>
+
+	  <div class="row"> 
+	    <% @products.each do |product| %>
+	    	<div class="col-md-4">
+			<h1><%= link_to product.name, product %></h1>				
+							
+			<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+						
+			<%= product_image_preview product.image.url %>				
+				
+			</div>	
+	    <% end %>
+	  </div>
+</div>
