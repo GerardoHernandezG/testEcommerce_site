@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :subcategories
   namespace :admin do
     get 'users/index'
   end

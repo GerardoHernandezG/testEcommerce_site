@@ -16,3 +16,21 @@
 .admin_list{
 	font-size: 1.4em;
 }
+
+.custom_link_blue{
+	color: blue !important; 
+}
+
+.custom_link_red{
+	color: red !important; 
+}
+
+.custom_link_white a:visited:hover{
+	color: white !important; 
+}
+
+a:link { color: black; text-decoration: none; }
+a:visited { color: black; text-decoration: none; }
+a:visited:hover { color: black; text-decoration: none; }
+a:hover { color: black; text-decoration: none; }
+a:active { color: black; text-decoration: none; } 

@@ -2,13 +2,18 @@
 
 	<center><h1>Categorías</h1></center>
 
-	<h2><%= link_to 'Nueva Categoría', new_category_path %></h2>
+	<h2><%= link_to 'Nueva Categoría', new_category_path, class: "custom_link_blue" %></h2>
 		<ul>
 		<% @categories.each do |category| %>				
-			<li class="admin_list"><%= link_to category.title, category %></li><%= link_to 'Editar', edit_category_path(category) %> - <%= link_to "Eliminar", category, method: :delete, data: { confirm: '¿Deseas eliminar la categoría?' } %>
+			<li class="admin_list"><%= link_to category.title, category %></li>
+			<% @subcategories.where(category_id: category.id).each do |subcategory| %>
+				<li><%= link_to subcategory.title, subcategory %></li>
+			<% end %>
+			<!-- Pendiente mandar el id de la categoria para ponerlo en un hidden y gaurdar el form -->
+			<%= link_to 'Agregar Sub Categoría', new_subcategory_path(category.id), class: "custom_link_blue" %> - <%= link_to 'Editar', edit_category_path(category), class: "custom_link_blue" %> - <%= link_to "Eliminar", category, method: :delete, data: { confirm: '¿Deseas eliminar la categoría?' }, class: "custom_link_blue" %>
 		<% end %>
 		</ul>
 	<br>
-	<h3><%= link_to 'Regresar al Panel', '/admin/settings' %></h3>
+	<%= link_to 'Regresar al Panel', '/admin/settings', class: 'custom_link_red', style: 'font-size: 1.3em' %>	
 
 </div>

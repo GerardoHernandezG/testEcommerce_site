@@ -4,7 +4,7 @@
 			<div class="w3l_offers">
 				<% if user_signed_in? %>
 				  <% if current_user.permission_level == 1 %>
-					<p><strong>Conectado: </strong><%= current_user.username %> - <%= link_to "Administrar", admin_settings_path %></p>
+					<p><strong>Conectado: </strong><%= current_user.username %> - <span class="custom_link_white"><%= link_to "Administrar", admin_settings_path, class: 'custom_link_white', style: 'font-size: 1.1em;' %></span></p>
 				  <% else %>
 				  	<p>Conectado: <%= current_user.username %></p>
 				  <% end %>
